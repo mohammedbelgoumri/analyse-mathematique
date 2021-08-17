@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper]{report}
+
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+	urlcolor=blue,
+	citecolor=black,
+    bookmarks=true
+}
+
+% Theorem-like environnements
+\newtheorem{theorem}{Théorème}[chapter]
+\newtheorem{lemma}{Lémme}
+\newtheorem{corollary}{Corollaire}[theorem]
+\theoremstyle{definition}
+\newtheorem{thedef}[theorem]{Théorème et définition}
+\newtheorem{definition}{Définition}
+\newtheorem{example}{Exemple}[chapter]
+\theoremstyle{remark}
+\newtheorem{remark}{Remarque}
+
+\author{Mohammed D. Belgoumri}
+\title{Analyse I}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \include{source/droite-réelle-achevée}
+\end{document}
