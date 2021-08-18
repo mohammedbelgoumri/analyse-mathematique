@@ -2,7 +2,7 @@
     Dans la suite de ce chapitre, \((\mathbb{K}, +, \cdot)\) est l'un des deux corps \((\mathbb{R}, +, \cdot)\) ou \((\mathbb{C}, +, \cdot)\).
     \begin{definition}[Suite numérique]\ \\
         On appelle une \emph{suite numérique} toute application \(u:\mathbb{N} \rightarrow \mathbb{K}\).
-        Une suite numérique est notée \((u_n)_{n \in \mathbb{N}}\) plutôt que:
+        Une suite numérique est notée \((u_n)_{n \in \mathbb{N}}\) plutôt que :
         \[
             \left\{
                 \begin{array}{l}
@@ -11,5 +11,47 @@
                 \end{array}
             \right.    
         \]
-        \(u_n\) (l'image de \(n\) par cette application) est appellé le \emph{terme géneral} de la suite.
+        \(u_n\) (l'image de \(n\) par cette application) est appelée le \emph{terme général} de la suite.
     \end{definition}
+
+    \begin{definition}[Suite extraite]\ \\
+        Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique. On appelle une suite extraite de \((u_n)_{n\in\mathbb{N}}\) toute suite numérique \((v_n)_{n\in\mathbb{N}}\) de terme général \(v_n = u_{\varphi(n)}\) où \(\varphi: \mathbb{N} \rightarrow \mathbb{N}\) est une application croissante.
+    \end{definition}
+    
+    \begin{thedef}[Limite d'un suite, convergence, divergence]\ \\
+        \begin{itemize}
+            \item Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique. Il existe au plus un seul \(l\in\mathbb{K}\) qui vérifie la condition :
+            \[
+                \forall \varepsilon > 0, \quad \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - l| < \varepsilon    
+            \]
+            Un tel \(l\) (s'il existe) est appelé la \emph{limite} de \((u_n)_{n\in\mathbb{N}}\). Il est noté \(\lim_{n\to+\infty}u_n\), ou encore \(\lim u_n\).
+            \item Une suite est dite \emph{convergente} ssi elle possède une limite \(l \in\mathbb{K}\). Dans ce cas on dit que la suite \emph{converge vers} \(l\).
+            \item Une suite qui n'est pas convergente est dite \emph{divergente}.
+        \end{itemize}
+    \end{thedef}
+
+    \begin{proof}\ \\
+        Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique, \(\varepsilon \in ]0, +\infty[ \) et \(l, l^{\prime} \in \mathbb{K}\) vérifient tous les deux :
+        \[
+            \begin{array}{l}
+                \forall \varepsilon > 0, \quad \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - l| < \varepsilon\\
+                \forall \varepsilon > 0, \quad \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - l^{\prime}| < \varepsilon\\
+            \end{array}
+        \]
+        On en déduit l'existence de \(n_1, n_2 \in \mathbb{N}\) tels que :
+        \[
+            \begin{array}{l}
+                \forall n \in \mathbb{N},\quad n > n_1 \Rightarrow |u_n - l| < \frac{\varepsilon}{2}\\
+                \forall n \in \mathbb{N},\quad n > n_2 \Rightarrow |u_n - l^{\prime}| < \frac{\varepsilon}{2}\\
+            \end{array}    
+        \]
+        En posant \(n_0 = \max{\{n_1, n_2\}}\), on trouve que :
+        \[
+            \forall n \in \mathbb{N},\quad n > n_0 \Rightarrow |l - l^{\prime}| = |l - u_n + u_n - l^{\prime}| \le |u_n - l| + |u_n - l^{\prime}| < \varepsilon
+        \]
+        Autrement dit, on a :
+        \[
+            \forall \varepsilon > 0, \quad |l - l^{\prime}| < \varepsilon 
+        \]
+        D'où la conclusion : \(l = l^{\prime}\)
+    \end{proof}
