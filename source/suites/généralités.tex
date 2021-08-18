@@ -123,10 +123,10 @@
             \item \ 
             \item Soit \(\varepsilon > 0\). D'après la définition de la limite, on a un  \(n_0\in\mathbb{N}\) tel que : 
             \begin{equation*}
-                \tag*{(*)}
+                \tag*{\((\ast)\)}
                 \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon 
             \end{equation*}
-            Or, \(\varphi\) est croissante. Elle vérifie donc \(\varphi(n) \ge n\) pour tout \(n\in\mathbb{N}\). Il en résulte en utilisant (*) que :
+            Or, \(\varphi\) est croissante. Elle vérifie donc \(\varphi(n) \ge n\) pour tout \(n\in\mathbb{N}\). Il en résulte en utilisant \((\ast)\) que :
             \[
                 \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_{\varphi(n)} - \ell| < \varepsilon     
             \]
@@ -134,7 +134,7 @@
         \end{enumerate}
     \end{proof}
 
-    \begin{corollary}
+    \begin{corollary}\ \\
         Une suite complexe converge ssi sa partie réelle et sa partie imaginaire convergent. Dans ce cas, on a :
         \[\lim u_n = \lim \Re{u_n} + i\ \lim\Im{u_n}\] 
     \end{corollary}
