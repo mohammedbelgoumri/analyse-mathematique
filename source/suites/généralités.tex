@@ -1,6 +1,8 @@
 \section{Généralités}
     Dans la suite de ce chapitre, \((\mathbb{K}, +, \cdot)\) est l'un des deux corps \((\mathbb{R}, +, \cdot)\) ou \((\mathbb{C}, +, \cdot)\).
-    \begin{definition}[Suite numérique]\ \\
+    
+    \begin{definition}[Suite numérique]
+        \ \\
         On appelle une \emph{suite numérique} toute application \(u:\mathbb{N} \rightarrow \mathbb{K}\).
         Une suite numérique est notée \((u_n)_{n \in \mathbb{N}}\) plutôt que :
         \[
@@ -14,23 +16,27 @@
         \(u_n\) (l'image de \(n\) par cette application) est appelée le \emph{terme général} de la suite.
     \end{definition}
 
-    \begin{definition}[Suite extraite]\ \\
-        Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique. On appelle une suite extraite de \((u_n)_{n\in\mathbb{N}}\) toute suite numérique \((v_n)_{n\in\mathbb{N}}\) de terme général \(v_n = u_{\varphi(n)}\) où \(\varphi: \mathbb{N} \rightarrow \mathbb{N}\) est une application croissante.
+    \begin{definition}[Suite extraite]
+        \ \\
+        Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique. On appelle une \emph{suite extraite} ou \emph{sous suite} de \((u_n)_{n\in\mathbb{N}}\) toute suite numérique \((v_n)_{n\in\mathbb{N}}\) de terme général \(v_n = u_{\varphi(n)}\) où \(\varphi: \mathbb{N} \rightarrow \mathbb{N}\) est une application croissante.
     \end{definition}
     
-    \begin{thedef}[Limite d'un suite, convergence, divergence]\ \\
+    \begin{thedef}[Limite d'un suite, convergence, divergence]
+        \ \\
+        \label{definition:limite_suite}
         \begin{itemize}
             \item Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique. Il existe au plus un seul \(l\in\mathbb{K}\) qui vérifie la condition :
             \[
                 \forall \varepsilon > 0, \quad \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - l| < \varepsilon    
             \]
             Un tel \(l\) (s'il existe) est appelé la \emph{limite} de \((u_n)_{n\in\mathbb{N}}\). Il est noté \(\lim_{n\to+\infty}u_n\), ou encore \(\lim u_n\).
-            \item Une suite est dite \emph{convergente} ssi elle possède une limite \(l \in\mathbb{K}\). Dans ce cas on dit que la suite \emph{converge vers} \(l\).
+            \item Une suite est dite \emph{convergente} ssi elle possède une limite \(l \in\mathbb{K}\). Dans ce cas on dit que la suite \emph{converge vers} \(l\) et on écrit : \(u_n \to l\)
             \item Une suite qui n'est pas convergente est dite \emph{divergente}.
         \end{itemize}
     \end{thedef}
 
-    \begin{proof}\ \\
+    \begin{proof}
+        \ \\
         Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique, \(\varepsilon \in ]0, +\infty[ \) et \(l, l^{\prime} \in \mathbb{K}\) vérifient tous les deux :
         \[
             \begin{array}{l}
@@ -55,3 +61,67 @@
         \]
         D'où la conclusion : \(l = l^{\prime}\)
     \end{proof}
+
+    \begin{theorem}
+        \ \\
+        Toute suite convergente est bornée. i.e : Si \((u_n)\) est convergente, alors il existe \(M \in \mathbb{R}^{*}_{+}\) tel que :
+        \[\forall n \in \mathbb{N}, \quad |u_n| \le M\]
+    \end{theorem}
+
+    \begin{proof}
+        \ \\
+        Soit \((u_n)\) une suite convergente vers \(l \in \mathbb{K}\) et \(\varepsilon > 0\). D'après la définition de la limite, on a :
+        \[
+            \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - l| < \varepsilon    
+        \]
+        On en déduit que pour tout \(n>n_0\), on a :
+        \[
+            |u_n - l| < \varepsilon \Rightarrow |u_n| + |l| < \varepsilon \Rightarrow |u_n| < \varepsilon - |l|    
+        \]
+        Finalement, en posant \(m = \max{\{|u_n|\ | n \le n_0\}}\) et \(M = \max{\{m, \varepsilon - |l|\}}\) on a bien :
+        \[\forall n \in \mathbb{N}, \quad |u_n| \le M\]
+    \end{proof}
+
+    \begin{theorem}[Operations sur les suites convergentes]
+        \ \\
+        \label{theorem:ops_suites_convergentes}
+        Soient \((u_n)\) et \((v_n)\) deux suites convergentes vers \(l\in\mathbb{K}\) et \(l^{\prime}\in\mathbb{K}\) respectivement. On a :
+        \begin{enumerate}[label=(\roman*)]
+            \item \((u_n + \lambda v_n)_{n\in\mathbb{N}}\) converge vers \(l + \lambda l^{\prime}\) quelque soit \(\lambda\in\mathbb{K}\). 
+            \item \((|u_n|)_{n\in\mathbb{N}}\) converge vers \(|l|\).
+            \item \((\forall n \in \mathbb{N}, \quad u_n \le v_n) \Rightarrow l \le l^{\prime}\)
+            \item \((u_nv_n)_{n\in\mathbb{N}}\) converge vers \(ll^{\prime}\).
+            \item Si \(\forall n \in \mathbb{N}, \quad u_n \neq 0\) et \(l\neq 0\), alors \({\left({1\over u_n}\right)}_{n\in\mathbb{N}}\) converge vers \({1\over l}\).
+            \item Toute suite \((u_{\varphi(n)})_{n\in\mathbb{N}}\) extraite de \((u_n)\) converge vers \(l\). 
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        % Compléter (iii) jusqu'à (vi)
+        \ \\
+        \begin{enumerate}[label=(\roman*)]
+            \item Soit \(\varepsilon>0\). Comme \(u_n\to l\) et \(v_n \to l^{\prime}\), il existe \(n_1, n_2 \in \mathbb{N}\) tels que :
+            \[
+                \begin{array}{l}
+                    \forall n \in \mathbb{N},\quad n > n_1 \Rightarrow |u_n - l| < \frac{\varepsilon}{2}\\
+                    \forall n \in \mathbb{N},\quad n > n_2 \Rightarrow |v_n - l^{\prime}| < \frac{\varepsilon}{2|\lambda|}\\
+                \end{array}    
+            \]
+            En posant \(n_0 = \max{\{n_1, n_2\}}\), on a pour tout \(n>n_0\) :
+            \[
+                \begin{array}{lcl}
+                    |u_n + \lambda v_n - l - \lambda l^{\prime}| &\le& |u_n  - l| + |\lambda|\cdot|v_n - l^{\prime}|\\
+                     &<& \frac{\varepsilon}{2} + |\lambda|\frac{\varepsilon}{2|\lambda|}\\
+                     &=& \varepsilon
+                \end{array}
+            \]
+            Ce qui entraîne que \(\lim (u_n + \lambda v_n) = l + \lambda l^{\prime}\) 
+            
+            \item La conclusion suit directement de l'inégalité triangulaire : \[\Big| |u_n| - |l| \Big| \le |u_n - l|\]
+        \end{enumerate}
+    \end{proof}
+
+    \begin{corollary}
+        Une suite complexe converge ssi sa partie réelle et sa partie imaginaire convergent. Dans ce cas, on a :
+        \[\lim u_n = \lim \Re{u_n} + i\ \lim\Im{u_n}\] 
+    \end{corollary}
