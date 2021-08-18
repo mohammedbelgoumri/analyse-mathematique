@@ -97,7 +97,7 @@
     \end{theorem}
 
     \begin{proof}
-        % Compléter (iii) jusqu'à (vi)
+        % Compléter (iii) jusqu'à (v)
         \ \\
         \begin{enumerate}[label=(\roman*)]
             \item Soit \(\varepsilon>0\). Comme \(u_n\to l\) et \(v_n \to l^{\prime}\), il existe \(n_1, n_2 \in \mathbb{N}\) tels que :
@@ -118,6 +118,19 @@
             Ce qui entraîne que \(\lim (u_n + \lambda v_n) = l + \lambda l^{\prime}\) 
             
             \item La conclusion suit directement de l'inégalité triangulaire : \[\Big| |u_n| - |l| \Big| \le |u_n - l|\]
+            \item \ 
+            \item \ 
+            \item \ 
+            \item Soit \(\varepsilon > 0\). D'après la définition de la limite, on a un  \(n_0\in\mathbb{N}\) tel que : 
+            \begin{equation*}
+                \tag*{(*)}
+                \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - l| < \varepsilon 
+            \end{equation*}
+            Or, \(\varphi\) est croissante. Elle vérifie donc \(\varphi(n) \ge n\) pour tout \(n\in\mathbb{N}\). Il en résulte en utilisant (*) que :
+            \[
+                \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_{\varphi(n)} - l| < \varepsilon     
+            \]
+            Autrement dit : \(u_{\varphi(n)} \to l\)
         \end{enumerate}
     \end{proof}
 
