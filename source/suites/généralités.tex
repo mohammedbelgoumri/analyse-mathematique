@@ -76,9 +76,9 @@
         \]
         On en déduit que pour tout \(n>n_0\), on a :
         \[
-            |u_n - l| < \varepsilon \Rightarrow |u_n| + |l| < \varepsilon \Rightarrow |u_n| < \varepsilon - |l|    
+            |u_n - l| \le |u_n| - |l| < \varepsilon \Rightarrow |u_n| < |l| +\varepsilon     
         \]
-        Finalement, en posant \(m = \max{\{|u_n|\ | n \le n_0\}}\) et \(M = \max{\{m, \varepsilon - |l|\}}\) on a bien :
+        Finalement, en posant \(m = \max{\{|u_n|\ | n \le n_0\}}\) et \(M = \max{\{m, |l| + \varepsilon\}}\) on a bien :
         \[\forall n \in \mathbb{N}, \quad |u_n| \le M\]
     \end{proof}
 
