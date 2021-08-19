@@ -1,12 +1,12 @@
 \section{Généralités}
     \begin{definition}[Suite numérique]
         \ \\
-        On appelle une \emph{suite numérique} toute application \(u:\mathbb{N} \rightarrow \mathbb{K}\).
-        Une suite numérique est notée \((u_n)_{n \in \mathbb{N}}\) plutôt que :
+        On appelle une \emph{suite numérique} toute application \(u:\naturals \rightarrow \field\).
+        Une suite numérique est notée \((u_n)_{n \in \naturals}\) plutôt que :
         \[
             \left\{
                 \begin{array}{l}
-                    u: \mathbb{N} \rightarrow \mathbb{K}\\
+                    u: \naturals \rightarrow \field\\
                     n \mapsto u_n
                 \end{array}
             \right.    
@@ -16,42 +16,42 @@
 
     \begin{definition}[Suite extraite]
         \ \\
-        Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique. On appelle une \emph{suite extraite} ou \emph{sous suite} de \((u_n)_{n\in\mathbb{N}}\) toute suite numérique \((v_n)_{n\in\mathbb{N}}\) de terme général \(v_n = u_{\varphi(n)}\) où \(\varphi: \mathbb{N} \rightarrow \mathbb{N}\) est une application croissante.
+        Soit \((u_n)_{n\in\naturals}\) une suite numérique. On appelle une \emph{suite extraite} ou \emph{sous suite} de \((u_n)_{n\in\naturals}\) toute suite numérique \((v_n)_{n\in\naturals}\) de terme général \(v_n = u_{\varphi(n)}\) où \(\varphi: \naturals \rightarrow \naturals\) est une application croissante.
     \end{definition}
     
     \begin{thedef}[Limite d'une suite, convergence, divergence]
         \ \\
         \label{definition:limite_suite}
         \begin{itemize}
-            \item Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique. Il existe au plus un seul \(\ell\in\mathbb{K}\) qui vérifie la condition :
+            \item Soit \((u_n)_{n\in\naturals}\) une suite numérique. Il existe au plus un seul \(\ell\in\field\) qui vérifie la condition :
             \[
-                \forall \varepsilon > 0, \quad \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon    
+                \forall \varepsilon > 0, \quad \exists n_0 \in \naturals, \quad \forall n \in \naturals, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon    
             \]
-            Un tel \(\ell\) (s'il existe) est appelé la \emph{limite} de \((u_n)_{n\in\mathbb{N}}\). On le note :  \(\lim\limits_{n\to+\infty}u_n\), ou encore \(\lim u_n\).
-            \item Une suite est dite \emph{convergente} ssi elle possède une limite \(\ell \in \mathbb{K}\). Dans ce cas on dit que la suite \emph{converge vers} \(\ell\) et on écrit : \(u_n \to\ell \)
+            Un tel \(\ell\) (s'il existe) est appelé la \emph{limite} de \((u_n)_{n\in\naturals}\). On le note :  \(\lim\limits_{n\to+\infty}u_n\), ou encore \(\lim u_n\).
+            \item Une suite est dite \emph{convergente} ssi elle possède une limite \(\ell \in \field\). Dans ce cas on dit que la suite \emph{converge vers} \(\ell\) et on écrit : \(u_n \to\ell \)
             \item Une suite qui n'est pas convergente est dite \emph{divergente}.
         \end{itemize}
     \end{thedef}
 
     \begin{proof}
         \ \\
-        Soit \((u_n)_{n\in\mathbb{N}}\) une suite numérique, \(\varepsilon \in ]0, +\infty[ \) et \(\ell, \ell^{\prime} \in \mathbb{K}\) vérifient tous les deux :
+        Soit \((u_n)_{n\in\naturals}\) une suite numérique, \(\varepsilon \in ]0, +\infty[ \) et \(\ell, \ell^{\prime} \in \field\) vérifient tous les deux :
         \[
             \begin{array}{l}
-                \forall \varepsilon > 0, \quad \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon\\
-                \forall \varepsilon > 0, \quad \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - \ell^{\prime}| < \varepsilon\\
+                \forall \varepsilon > 0, \quad \exists n_0 \in \naturals, \quad \forall n \in \naturals, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon\\
+                \forall \varepsilon > 0, \quad \exists n_0 \in \naturals, \quad \forall n \in \naturals, \quad n > n_0 \Rightarrow |u_n - \ell^{\prime}| < \varepsilon\\
             \end{array}
         \]
-        On en déduit l'existence de \(n_1, n_2 \in \mathbb{N}\) tels que :
+        On en déduit l'existence de \(n_1, n_2 \in \naturals\) tels que :
         \[
             \begin{array}{l}
-                \forall n \in \mathbb{N},\quad n > n_1 \Rightarrow |u_n - \ell| < \frac{\varepsilon}{2}\\
-                \forall n \in \mathbb{N},\quad n > n_2 \Rightarrow |u_n - \ell^{\prime}| < \frac{\varepsilon}{2}\\
+                \forall n \in \naturals,\quad n > n_1 \Rightarrow |u_n - \ell| < \frac{\varepsilon}{2}\\
+                \forall n \in \naturals,\quad n > n_2 \Rightarrow |u_n - \ell^{\prime}| < \frac{\varepsilon}{2}\\
             \end{array}    
         \]
         En posant \(n_0 = \max{\{n_1, n_2\}}\), on trouve que :
         \[
-            \forall n \in \mathbb{N},\quad n > n_0 \Rightarrow |\ell - \ell^{\prime}| = |\ell - u_n + u_n - \ell^{\prime}| \le |u_n - \ell| + |u_n - \ell^{\prime}| < \varepsilon
+            \forall n \in \naturals,\quad n > n_0 \Rightarrow |\ell - \ell^{\prime}| = |\ell - u_n + u_n - \ell^{\prime}| \le |u_n - \ell| + |u_n - \ell^{\prime}| < \varepsilon
         \]
         Autrement dit, on a :
         \[
@@ -62,35 +62,35 @@
 
     \begin{theorem}
         \ \\
-        Toute suite convergente est bornée. i.e : Si \((u_n)\) est convergente, alors il existe \(M \in \mathbb{R}^{*}_{+}\) tel que :
-        \[\forall n \in \mathbb{N}, \quad |u_n| \le M\]
+        Toute suite convergente est bornée. i.e : Si \((u_n)\) est convergente, alors il existe \(M \in \reals^{*}_{+}\) tel que :
+        \[\forall n \in \naturals, \quad |u_n| \le M\]
     \end{theorem}
 
     \begin{proof}
         \ \\
-        Soit \((u_n)\) une suite convergente vers \(\ell \in  \mathbb{K}\) et \(\varepsilon > 0\). D'après la définition de la limite, on a :
+        Soit \((u_n)\) une suite convergente vers \(\ell \in  \field\) et \(\varepsilon > 0\). D'après la définition de la limite, on a :
         \[
-            \exists n_0 \in \mathbb{N}, \quad \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon    
+            \exists n_0 \in \naturals, \quad \forall n \in \naturals, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon    
         \]
         On en déduit que pour tout \(n>n_0\), on a :
         \[
             |u_n - \ell| \le |u_n| - |\ell| < \varepsilon \Rightarrow |u_n| < |\ell| +\varepsilon     
         \]
         Finalement, en posant \(m = \max{\{|u_n|\ | n \le n_0\}}\) et \(M = \max{\{m, |\ell| + \varepsilon\}}\) on a bien :
-        \[\forall n \in \mathbb{N}, \quad |u_n| \le M\]
+        \[\forall n \in \naturals, \quad |u_n| \le M\]
     \end{proof}
 
     \begin{theorem}[Operations sur les suites convergentes]
         \ \\
         \label{theorem:ops_suites_convergentes}
-        Soient \((u_n)\) et \((v_n)\) deux suites convergentes vers \(\ell\in\mathbb{K}\) et \(\ell^{\prime}\in\mathbb{K}\) respectivement. On a :
+        Soient \((u_n)\) et \((v_n)\) deux suites convergentes vers \(\ell\in\field\) et \(\ell^{\prime}\in\field\) respectivement. On a :
         \begin{enumerate}[label=(\roman*)]
-            \item \((u_n + \lambda v_n)_{n\in\mathbb{N}}\) converge vers \(\ell + \lambda \ell^{\prime}\) quelque soit \(\lambda\in\mathbb{K}\). 
-            \item \((|u_n|)_{n\in\mathbb{N}}\) converge vers \(|\ell|\).
-            \item \((\forall n \in \mathbb{N}, \quad u_n \le v_n) \Rightarrow \ell \le \ell^{\prime}\)
-            \item \((u_nv_n)_{n\in\mathbb{N}}\) converge vers \(\ell\ell^{\prime}\).
-            \item Si \(\forall n \in \mathbb{N}, \quad u_n \neq 0\) et \(\ell\neq 0\), alors \({\left({1\over u_n}\right)}_{n\in\mathbb{N}}\) converge vers \({1\over l}\).
-            \item Toute suite \((u_{\varphi(n)})_{n\in\mathbb{N}}\) extraite de \((u_n)\) converge vers \(\ell\). 
+            \item \((u_n + \lambda v_n)_{n\in\naturals}\) converge vers \(\ell + \lambda \ell^{\prime}\) quelque soit \(\lambda\in\field\). 
+            \item \((|u_n|)_{n\in\naturals}\) converge vers \(|\ell|\).
+            \item \((\forall n \in \naturals, \quad u_n \le v_n) \Rightarrow \ell \le \ell^{\prime}\)
+            \item \((u_nv_n)_{n\in\naturals}\) converge vers \(\ell\ell^{\prime}\).
+            \item Si \(\forall n \in \naturals, \quad u_n \neq 0\) et \(\ell\neq 0\), alors \({\left({1\over u_n}\right)}_{n\in\naturals}\) converge vers \({1\over l}\).
+            \item Toute suite \((u_{\varphi(n)})_{n\in\naturals}\) extraite de \((u_n)\) converge vers \(\ell\). 
         \end{enumerate}
     \end{theorem}
 
@@ -98,11 +98,11 @@
         % Compléter (iii) jusqu'à (v)
         \ \\
         \begin{enumerate}[label=(\roman*)]
-            \item Soit \(\varepsilon>0\). Comme \(u_n\to\ell \) et \(v_n \to \ell^{\prime}\), il existe \(n_1, n_2 \in \mathbb{N}\) tels que :
+            \item Soit \(\varepsilon>0\). Comme \(u_n\to\ell \) et \(v_n \to \ell^{\prime}\), il existe \(n_1, n_2 \in \naturals\) tels que :
             \[
                 \begin{array}{l}
-                    \forall n \in \mathbb{N},\quad n > n_1 \Rightarrow |u_n - \ell| < \frac{\varepsilon}{2}\\
-                    \forall n \in \mathbb{N},\quad n > n_2 \Rightarrow |v_n - \ell^{\prime}| < \frac{\varepsilon}{2|\lambda|}\\
+                    \forall n \in \naturals,\quad n > n_1 \Rightarrow |u_n - \ell| < \frac{\varepsilon}{2}\\
+                    \forall n \in \naturals,\quad n > n_2 \Rightarrow |v_n - \ell^{\prime}| < \frac{\varepsilon}{2|\lambda|}\\
                 \end{array}    
             \]
             En posant \(n_0 = \max{\{n_1, n_2\}}\), on a pour tout \(n>n_0\) :
@@ -119,14 +119,14 @@
             \item \ 
             \item \ 
             \item \ 
-            \item Soit \(\varepsilon > 0\). D'après la définition de la limite, on a un  \(n_0\in\mathbb{N}\) tel que : 
+            \item Soit \(\varepsilon > 0\). D'après la définition de la limite, on a un  \(n_0\in\naturals\) tel que : 
             \begin{equation*}
                 \tag*{\((\ast)\)}
-                \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon 
+                \forall n \in \naturals, \quad n > n_0 \Rightarrow |u_n - \ell| < \varepsilon 
             \end{equation*}
-            Or, \(\varphi\) est croissante. Elle vérifie donc \(\varphi(n) \ge n\) pour tout \(n\in\mathbb{N}\). Il en résulte en utilisant \((\ast)\) que :
+            Or, \(\varphi\) est croissante. Elle vérifie donc \(\varphi(n) \ge n\) pour tout \(n\in\naturals\). Il en résulte en utilisant \((\ast)\) que :
             \[
-                \forall n \in \mathbb{N}, \quad n > n_0 \Rightarrow |u_{\varphi(n)} - \ell| < \varepsilon     
+                \forall n \in \naturals, \quad n > n_0 \Rightarrow |u_{\varphi(n)} - \ell| < \varepsilon     
             \]
             Autrement dit : \(u_{\varphi(n)} \to\ell \)
         \end{enumerate}
