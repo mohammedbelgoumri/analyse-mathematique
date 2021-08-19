@@ -11,6 +11,54 @@
         On note :  \(\lim u_n = +\infty\) (resp. \(-\infty\)).
     \end{definition}
 
-    \begin{definition}[Suite minorée, majorée, bornée]\ \\
-        
+    \begin{definition}\ \\
+        Soit \((u_n)_{n\in\naturals}\) une suite réelle.
+        On dit que \(u_n\) est :
+        \begin{itemize}
+            \item\emph{Majorée} ssi : \(\exists M \in \reals, \quad \forall n \in \naturals, \quad u_n \le M\).
+            \item\emph{Minorée} ssi \(\exists m \in \reals, \quad \forall n \in \naturals, \quad u_n \ge m\).
+            \item\emph{Croissante} (resp. \emph{strictement croissante}) ssi : \(\forall n\in \naturals, \quad u_{n+1} \ge u_n\). (resp. \(u_{n+1} > u_n\)).
+            \item\emph{Décroissante} (resp. \emph{strictement décroissante}) ssi : \(\forall n\in \naturals, \quad u_{n+1} \le u_n\). (resp. \(u_{n+1} < u_n\)).
+            \item\emph{Monotone}(resp. \emph{strictement monotone}) ssi elle est croissante (resp. strictement croissante) ou décroissante (resp. strictement décroissante).
+        \end{itemize}
     \end{definition}
+
+
+    \begin{theorem}[Suites monotones]\ \\
+        \label{thm:suites_monotone}
+        Soit \(u_n)_{n\in\naturals}\) une suite réelle. 
+        \begin{enumerate}[label=(\roman*)]
+            \item Si \(u_n\) est croissante et majorée, alors \(\lim u_n = \sup\limits_{n\in\naturals}u_n\).
+            \item Si \(u_n\) est croissante et minorée, alors \(\lim u_n = \inf\limits_{n\in\naturals}u_n\).
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        \ \\
+        \begin{enumerate}[label=(\roman*)]
+            \item Posons \(\lambda:=\sup\limits_{n\in\naturals}u_n\). On a : 
+            \[
+            \forall \varepsilon > 0, \quad \exists n_0 \in \naturals, \quad \lambda - \varepsilon < u_{n_0} \le \lambda    
+            \]
+            
+            \(u_n\) étant croissante, \(\lambda - \varepsilon < u_{n_0} \Rightarrow \lambda - \varepsilon < u_{n}\) pour tout \(n\ge n_0\).
+            Il en suite que :
+            \[
+            \forall \varepsilon > 0, \quad \exists n_0 \in \naturals, \quad \forall n\in \naturals, \quad \lambda - \varepsilon < u_{n} \le \lambda < \lambda + \varepsilon
+            \]
+            D'où la conclusion : \(lim u_n = \lambda\).
+
+            \item La démonstration s'obtient en appliquant le raisonnement précédent à \((-u_n)_{n\in\naturals}\).
+        \end{enumerate}
+    \end{proof}
+
+    \begin{thedef}[Suites adjacentes]\ \\
+        \label{thm:suites_adjacentes}
+        Soit \((u_n)\) et \(v_n\) deux suites réelles telles que :
+        \begin{enumerate}[label=\(\alph*\).]
+            \item \((u_n)\) est croissante.
+            \item \((v_n)\) est décroissante.
+            \item \((u_n - v_n) \to 0\)
+        \end{enumerate}
+        \((u_n)\) et \(v_n\) sont dites deux suites \emph{adjacentes}. Elles convergent et vérifient \(\lim u_n =  \lim v_n\).
+    \end{thedef}
