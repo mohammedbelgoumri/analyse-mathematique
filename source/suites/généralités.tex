@@ -74,7 +74,7 @@
         \]
         On en déduit que pour tout \(n>n_0\), on a :
         \[
-            |u_n - \ell| \le |u_n| - |\ell| < \varepsilon \Rightarrow |u_n| < |\ell| +\varepsilon     
+            |u_n| - |\ell| \le |u_n - \ell| < \varepsilon \Rightarrow |u_n| < |\ell| +\varepsilon     
         \]
         Finalement, en posant \(m = \max{\{|u_n|\ | n \le n_0\}}\) et \(M = \max{\{m, |\ell| + \varepsilon\}}\) on a bien :
         \[\forall n \in \naturals, \quad |u_n| \le M\]
@@ -134,5 +134,5 @@
 
     \begin{corollary}\ \\
         Une suite complexe converge ssi sa partie réelle et sa partie imaginaire convergent. Dans ce cas, on a :
-        \[\lim u_n = \lim \Re{u_n} + i\ \lim\Im{u_n}\] 
+        \[\lim u_n = \lim \Re{(u_n)} + i\ \lim\Im{(u_n)}\] 
     \end{corollary}
