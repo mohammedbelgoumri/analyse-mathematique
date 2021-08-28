@@ -6,7 +6,7 @@
         {
             "label": "compile",
             "type": "shell",
-            "command": "/usr/bin/pdflatex",
+            "command": "/usr/local/texlive/2021/bin/x86_64-linux/pdflatex",
             "args": [
                 "-jobname=Analyse1",
                 "./source/main.tex"

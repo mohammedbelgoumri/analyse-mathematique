@@ -12,6 +12,12 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{colonequals}
+\usepackage{import}
+
+
+
+
+
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -52,10 +58,10 @@
 \date{\today}
 
 \begin{document}
-    \include{source/page_de_garde}
+    \import{source}{page_de_garde.tex}
     \addcontentsline{toc}{chapter}{Page de garde}
     \tableofcontents
     \addcontentsline{toc}{chapter}{Table des matières}
-    \include{source/droite-réelle-achevée}
-    \include{source/suites/suites}
+    \import{source/droite-réelle-achevée}{droite-réelle-achevée.tex}
+    \import{source/suites}{suites.tex}
 \end{document}
