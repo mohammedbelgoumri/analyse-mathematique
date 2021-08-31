@@ -10,6 +10,19 @@
             "args": [
                 "-jobname=Analyse1",
                 "./source/main.tex"
+            ]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "*.aux",
+                "*.log",
+                "*.out"
+            ],
+            "dependsOn": [
+                "compile"
             ],
             "problemMatcher": [],
             "group": {
@@ -18,4 +31,23 @@
             }
         }
     ]
+    // {
+    //     "label": "clean",
+    //     "type": "shell",
+    //     "command": "find",
+    //     "args": [
+    //         ".",
+    //         "-name",
+    //         "'+(*.aux, *.log, *.out)'",
+    //         "-delete"
+    //     ],
+    //     "dependsOn": [
+    //         "compile"
+    //     ],
+    //     "problemMatcher": [],
+    //     "group": {
+    //         "kind": "build",
+    //         "isDefault": true
+    //     }
+    // }
 }
